@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    image: python-django:latest
+    ports:
+      - "8000:8000"
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: arc_payroll
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - "5432:5432"
